@@ -1,0 +1,65 @@
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{{ component( "Ceres::Basket.Components.BasketList" ) }}
+{{ component( "Ceres::Basket.Components.BasketTotals" ) }}
+
+<script type="x/template" id="vue-basket-preview">
+    <div class="wrapper-inner basket-preview">
+        <header class="basket-header p-a-1">
+            <div class="d-inline-block m-a-0 h3">{{ trans("Ceres::Template.basketPreview") }}</div>
+            <button v-toggle-basket-preview type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </header>
+
+        <div v-if="basketNotifications.length > 0">
+            <div class="alert fade in alert-danger" v-for="notification in basketNotifications">
+                <div>${ notification.message }</div>
+            </div>
+        </div>
+
+        <!-- BASKET LIST -->
+        <div class="p-a-1 list">
+          <div class="cmp cmp-basket-preview-list">
+              <basket-list template="#vue-basket-list" size="small"></basket-list>
+          </div>
+        </div>
+        <!-- ./BASKET LIST -->
+
+        <!-- BASKET PREVIEW BOTTOM -->
+        <div class="p-a-1 bg-faded totals">
+
+            <basket-totals template="#vue-basket-totals"></basket-totals>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 m-b-1">
+                    <a v-waiting-animation-infinite
+                       href="{{ urls.basket }}"
+                       class="btn btn-outline-primary btn-block basketBtn"
+                       :class="{ 'disabled': basketItems.length <= 0 }"
+                       title="{{ trans("Ceres::Template.basket") }}">
+                        <i class="fa fa-shopping-cart"></i>
+                        {{ trans("Ceres::Template.basket") }} 
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                    {{ LayoutContainer.show("Ceres::BasketPreview.BeforeCheckoutButton") }}
+
+                    <div>
+                        <a v-waiting-animation-infinite
+                           href="{{ urls.checkout }}"
+                           :class="{ 'disabled': basketItems.length <= 0 }"
+                           class="btn btn-primary btn-block checkOutBtn"
+                           title="{{ trans("Ceres::Template.basketCheckout") }}">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            {{ trans("Ceres::Template.basketCheckout") }}
+                        </a>
+                    </div>
+
+                    {{ LayoutContainer.show("Ceres::BasketPreview.AfterCheckoutButton") }}
+                </div>
+            </div>
+        </div>
+        <!-- ./BASKET PREVIEW BOTTOM -->
+    </div>
+</script>

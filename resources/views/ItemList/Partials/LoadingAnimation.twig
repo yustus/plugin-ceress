@@ -1,0 +1,14 @@
+<div class="loading-animation-frame col-xs-12 col-lg-12">
+
+    {% if ceresConfig.item.loadingAnimationType == "bars" %}
+        {% include "Ceres::ItemList.Partials.LoadingAnimationBars" %}
+
+    {% elseif ceresConfig.item.loadingAnimationType == "spinner" %}
+        {% include "Ceres::ItemList.Partials.LoadingAnimationSpinner" %}
+
+    {% else %}
+        {% include "Ceres::ItemList.Partials.LoadingAnimationBars" %}
+
+    {% endif %}
+
+</div>

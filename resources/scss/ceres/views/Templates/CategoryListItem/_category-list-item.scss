@@ -1,0 +1,316 @@
+.cmp-product-thumb{
+    padding: .8rem;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: $grid-gutter-width/2;
+
+    .tag-list span{
+        background-color: #4D4F4D;
+        text-transform: uppercase;
+        cursor: default;
+    }
+
+    .prices{
+        display: flex;
+    }
+
+    .crossprice{
+        font-size: 1rem;
+    }
+
+    .price-view-port{
+        flex: 1 0 0;
+    }
+
+    .thumb-title{
+        min-height: 32px;
+    }
+
+    .add-to-basket-lg-container{
+        -webkit-transform: rotate(360deg);
+        border-style: solid;
+        border-width: 0px 70px 70px 0;
+        border-color: transparent #F7F7F9 transparent transparent;
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        right: 0;
+        transition: 300ms ease-out;
+        cursor: pointer;
+
+        & > i{
+            right: -56px;
+            top: 11px;
+            position: absolute;
+            transition: 300ms ease-out;
+        }
+
+        &:hover{
+            border-color: transparent $brand-primary transparent transparent;
+
+            & > i{
+                color: #fff;
+            }
+        }
+    }
+
+    .category-list-view-port{
+            display: none;
+    }
+
+    .thumb-background{
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        bottom: -2px;
+        left: -1px;
+        background-color: #fff;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        border: 1px solid transparent;
+
+        transform-origin: top right;
+        transform: scaleX(1) scaleY(1);
+
+        transition: all 200ms ease-in-out;
+    }
+
+    .thumb-inner{
+        position: relative;
+        height: 100%;
+        transition: all 400ms;
+    }
+
+    .thumb-image{
+        position: relative;
+        width: 120px;
+        display: inline-block;
+        vertical-align: top;
+        cursor: pointer;
+    }
+
+    .main-image{
+        @include img-contain();
+        position: absolute;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+    }
+
+    //TODO create separate mixin
+    .special-tags{
+        z-index: 100;
+        position: absolute;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+
+        padding: .5rem;
+
+        .special-tag,
+        .tag{
+            display: block;
+            padding: .3em .5em .2rem;
+            font-size: .9rem;
+            font-weight: 300;
+            box-shadow: 0 0 3px 0 rgba(0,0,0,.4);
+            margin-bottom: 5px;
+        }
+    }
+
+    .thumb-content{
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: calc( 100% - 120px );
+        height: auto;
+        padding: 0 .8rem;
+        margin-left: -.3em;
+        background-color: #fff;
+
+        transition: all 200ms ease-in-out;
+    }
+
+    .thumb-title{
+        display: block;
+        position: relative;
+        text-align:left;
+        font-weight: 700;
+        color: $gray;
+        line-height: 1.1em;
+    }
+
+    .thumb-meta{
+        margin-top: .5rem;
+        text-align:left;
+
+        .vat-porto-info{
+            display: block;
+            white-space: nowrap;
+            margin-top: 5px;
+        }
+
+    }
+
+    .crossprice{
+        font-size: .81em;
+        font-weight: 700;
+        color: $gray-light;
+    }
+
+    .price {
+        color: $gray;
+        line-height: 1.1;
+        font-weight: 700;
+        font-size: 1.2rem;
+        min-height: 21px;
+    }
+
+    .category-unit-price {
+        font-size: .81em;
+        color: $gray-light;
+    }
+
+    .thumb-buy{
+        display: block;
+    }
+
+    .btn-group {
+        position: absolute;
+        bottom: 0;
+        left: calc(120px + 0.8rem);
+        z-index: 1000;
+        transition:all .3s ease;
+        opacity: 1;
+    }
+
+    .mobile-text-only{
+        display: none;
+    }
+
+    @include media-breakpoint-up(lg){
+        .btn-group{
+            right: 15px;
+            position: absolute;
+        }
+    }
+
+    @include media-breakpoint-down(xs){
+        .btn-group {
+            width: 52%;
+        }
+
+        .mobile-icon-right {
+            display: none;
+        }
+
+        .vat-porto-info {
+            white-space: normal !important;
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        .btn-group{
+            margin-top: 5px;
+            position: inherit;
+            width: 100%;
+        }
+
+        .mobile-text-only{
+            display: inline;
+            margin-left: -8px;
+        }
+
+        .mobile-width-button {
+            width: 100%;
+        }
+
+        .mobile-icon-right {
+            float: right;
+        }
+
+        .thumb-title {
+            min-height: 32px;
+        }
+
+        .category-list-view-port{
+            display: inline;
+        }
+    }
+    
+    @include media-breakpoint-up(sm){
+        padding: 0;
+        margin-bottom: $grid-gutter-width;
+
+        .thumb-background{
+            display: block;
+        }
+
+        .thumb-scroll-cmd {
+            flex: 0 0 auto;
+            text-align: center;
+            padding: .4rem;
+        }
+
+        .thumb-btn-buy{
+            min-height: 2rem;
+        }
+
+        .thumb-content{
+            padding: .8rem;
+            width: 100%;
+            margin: 0;
+        }
+
+        .btn-group {
+            bottom: 2.5rem;
+            left: auto;
+            right: .8rem;
+        }
+
+        .thumb-title{
+            font-weight: 400;
+            line-height: 1.5em;
+        }
+
+        .thumb-image{
+            width: 100%;
+        }
+
+        .img-fluid {
+            transition: transform .4s cubic-bezier(0, 0, .26, 1), opacity .3s cubic-bezier(0, 0, .26, 1), -webkit-transform .3s cubic-bezier(0, 0, .26, 1);
+        }
+
+        &:hover {
+            z-index: 1000;
+
+            .img-fluid {
+                transform: scale(1.05);
+            }
+
+            .owl-nav [class*='owl-'] {
+                opacity: 1;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md){
+
+    }
+    @include media-breakpoint-up(lg){
+        .btn-group {
+            bottom: .8rem;
+        }
+        .btn-group {
+            transition:all .3s ease;
+            opacity: 0;
+        }
+        &:hover {
+            .btn-group {
+                transition:all .3s ease;
+                opacity: 1;
+            }
+        }
+    }
+}

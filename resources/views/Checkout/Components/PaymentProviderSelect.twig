@@ -1,0 +1,38 @@
+<script type="x/template" id="vue-payment-provider-select">
+    <div class="cmp cmp-method-list list m-b-2" v-bind:class="{ 'error': this.showError }">
+        <ul class="method-list component-loading" :class="{ 'isLoading': isBasketLoading }">
+            <li v-for="paymentProvider in methodOfPaymentList" class="method-list-item" :data-id="paymentProvider.id">
+                <input
+                        type="radio"
+                        :id="'paymentMethod' + _uid + paymentProvider.id"
+                        name="MethodOfPaymentID"
+                        :value="paymentProvider.id"
+                        @change="onPaymentProviderChange(paymentProvider)"
+                        :checked="methodOfPaymentId === paymentProvider.id"
+                        :disabled="!paymentProvider.isSelectable"
+                >
+                <label :for="'paymentMethod' + _uid + paymentProvider.id">
+                    <div class="icon">
+                        <div class="square-container">
+                            <div class="square-inner center-xy">
+                              <img :alt="paymentProvider.name" :src="paymentProvider.icon">
+                            </div>
+                        </div>
+                    </div><!--
+                    --><div class="content">
+                    ${ paymentProvider.name }
+                        <small v-if="paymentProvider.sourceUrl" class="pull-xs-right">
+                            <a :href="paymentProvider.sourceUrl" rel="noopener noreferrer" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> details</a>
+                        </small>
+                        <div>
+                            <small>
+                                ${ paymentProvider.description | truncate('150') }
+                            </small>
+                        </div>
+                    </div>
+                </label>
+            </li><!--
+            -->
+        </ul>
+    </div>
+</script>

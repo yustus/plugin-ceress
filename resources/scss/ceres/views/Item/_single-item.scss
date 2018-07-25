@@ -1,0 +1,249 @@
+
+.single {
+    .list-item-carousel {
+        .list-control-special{
+            width: 5%;
+            height: 5%;
+            position: absolute;
+            top: 40%;
+        }
+    }
+
+    #single-carousel {
+        background: $white;
+    }
+
+    .main-image{
+        img{
+            width: 100%;
+        }
+    }
+
+    .title{
+        //font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .producer{
+        line-height: 1.1;
+        font-weight: 700;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .single-description {
+        font-size: .85rem;
+    }
+    .price {
+        display: block;
+        font-weight: bold;
+        line-height: 1;
+    }
+    .input-number {
+        text-align:center;
+    }
+
+    .vat {
+        line-height: 1.4;
+        margin-top: 0;
+        margin-bottom: .5em;
+        color:#020260;
+    }
+
+    .crosssellers {
+        img {
+            max-width: 100%;
+            width: auto;
+        }
+        .special-tags{
+            padding: .3rem;
+        }
+    }
+    .nav-tabs {
+        .nav-item {
+            float: none;
+            .nav-link {
+                border:1px solid $nav-tabs-border-color;
+                &.active,
+                &:hover {
+                    border:1px solid $nav-tabs-border-color;
+                    color: $gray-darker;
+                    background:$gray-lighter2;
+                }
+            }
+            &+.nav-item {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .tab-content {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .graduated-prices-table {
+        td:first-child {
+            padding-right: 1rem;
+            font-style: italic;
+        }  
+        
+        & i {
+            color: $brand-success;
+        }
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .3s ease-out;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0
+    }
+
+    .order-property-input {
+        transition: border-color .3s ease-out;
+
+        &.active {
+            border-color: $brand-success;
+        }
+    }
+}
+
+.availability_1,
+.availability_2 {background-color: $availability_1;}
+.availability_3,
+.availability_4 {background-color: $availability_3;}
+.availability_5,
+.availability_6,
+.availability_7,
+.availability_8 {background-color: $availability_5;}
+.availability_9,
+.availability_10 {background-color: $availability_9}
+
+
+.rating{
+    .tag{
+        padding-right: 0;
+        overflow: hidden;
+        cursor: pointer;
+
+        .amount{
+            padding: 0.2rem .6rem 0.2rem .4rem;
+            margin-left: .2rem;
+            background-color: #4d5154;
+        }
+    }
+}
+
+.rezension {
+    display: inline-block;
+}
+
+.img-thumbnail {
+    border:none;
+    border-radius:none;
+    padding: .75rem .45rem .25rem 0;
+}
+
+@include media-breakpoint-only(md) {
+    .single {
+        .price {
+            float: right;
+        }
+    }
+}
+
+
+@include media-breakpoint-up(md) {
+    .single {
+        .nav-tabs {
+            .nav-item {
+                float: left;
+                .nav-link {
+                    border:1px solid $nav-tabs-border-color;
+                    &.active,
+                    &:hover {
+                        border:1px solid $nav-tabs-border-color;
+                        color: $gray;
+                        background:white;
+                    }
+                    &.active {
+                        border-bottom: 1px solid transparent;
+                    }
+                }
+                &+.nav-item {
+                    margin-left: -1px;
+                }
+            }
+        }
+    }
+}
+
+.order-property-slider {
+    overflow: hidden;
+    
+    .order-property-slider-inner {
+        white-space: nowrap;
+        transition: transform 300ms ease;
+        
+        > div {
+            display: inline-block;
+            width: 100%;
+            visibility: hidden;
+            
+            &.active {
+                visibility: visible;
+            }
+        }
+    }
+    
+    .order-property-slider-controls {
+        display: flex;
+        flex-direction: row;
+        
+        .slider-nav {
+            flex: 1;
+            text-align: center;
+            
+            span {
+                width: 12px;
+                height: 12px;
+                display: inline-block;
+                border-radius: 50%;
+                border: 1px solid $gray-lighter;
+                background-color: #fff;
+                margin: 12px 5px 0;
+                cursor: pointer;
+                transition: all .3s ease;
+                
+                &.active {
+                    background-color: $gray-lighter;
+
+                    &.error {
+                        // background-color: lighten($brand-danger, 25%);
+                        background-color: mix($brand-danger, $gray-lighter);
+                        border-color: mix(lighten($brand-danger, 25%), $gray-lighter);
+                    }
+                }
+
+                &.highlight {
+                    background-color: $brand-primary;
+                    border-color: lighten($brand-primary, 25%);
+                }
+
+                &.error {
+                    background-color: $brand-danger;
+                    border-color: lighten($brand-danger, 25%);
+                }
+            }
+        }
+    }
+}
+
+.add-to-basket-container {
+    display: flex;
+
+    .quantity-input-container {
+        margin-right: 15px;
+    }
+}

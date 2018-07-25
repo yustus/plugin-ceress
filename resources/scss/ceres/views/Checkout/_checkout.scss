@@ -1,0 +1,80 @@
+.checkout{
+	.basket-items-list .item{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.login-register-title {
+		font-size: 1em;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	.cmp-address-list,
+	.form-check-label {
+		transition: all .3s ease;
+	}
+
+	.error {
+		background: $brand-danger !important;
+		color: $white !important;
+		border-radius: .1rem;
+		transition: all .3s ease;
+
+		& .text-muted {
+			color: $white !important;
+		}
+
+		&.form-check-label {
+			padding: .5em 1.75rem;
+			a {
+				color: $white;
+				&:hover {
+					color: $gray-lighter2;
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-up(sm){
+
+	}
+
+	@include media-breakpoint-up(md){
+
+	}
+
+	@include media-breakpoint-up(lg){
+
+	}
+
+}
+
+.my-account-no-line {
+	padding-bottom: 15px;
+}
+
+.payment-change-text {
+	color: $gray-light;
+	padding-top: 15px;
+}
+
+.payment-align-center {
+	text-align: center;
+}
+
+.payment-change-box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	.payment-change-box-item:nth-child(2) {
+		order: 1;
+	}
+	.cannot-change-payment {
+		font-size: 1rem;
+		padding: 5px;
+		.info-badge {
+			margin-left: .2rem;
+		}
+	}
+}

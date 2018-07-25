@@ -1,0 +1,214 @@
+.input-group{
+
+	&.vert{
+		.input-group-btn{
+			display: block;
+			width: 100%;
+
+			.btn{
+				width: 100%;
+				margin: 0;
+			}
+		}
+
+		//.form-control:not(:last-child),
+		.input-group-addon:not(:last-child),
+		.input-group-btn:not(:last-child) > .btn,
+		.input-group-btn:not(:last-child) > .btn-group > .btn,
+		.input-group-btn:not(:last-child) > .dropdown-toggle,
+		.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
+		.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+		  	@include border-bottom-radius(0);
+		  	@include border-top-radius($border-radius);
+		  	border-bottom: none;
+		}
+		.input-group-addon:not(:last-child) {
+		  	border-bottom: 0;
+		}
+		.input-group .form-control:not(:first-child),
+		.input-group-addon:not(:first-child),
+		.input-group-btn:not(:first-child) > .btn,
+		.input-group-btn:not(:first-child) > .btn-group > .btn,
+		.input-group-btn:not(:first-child) > .dropdown-toggle,
+		.input-group-btn:not(:last-child) > .btn:not(:first-child),
+		.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+		  	@include border-bottom-radius($border-radius);
+		  	@include border-top-radius(0);
+		  	border-top: none;
+		}
+		.form-control + .input-group-addon:not(:first-child) {
+		  	border-top: 0;
+		}
+
+		.form-control{
+			display: block;
+			float: none;
+			border-radius: 0!important;
+		}
+	}
+}
+
+button:focus {
+	outline:none;
+}
+
+// button combinations 
+.btn-group.extended,
+.input-group.extended{
+    display: flex;
+
+    .extended{
+        flex: 1;
+
+        .btn{
+            width: 100%;
+        }
+    }
+
+    .input-group-btn{
+        width: auto;
+    }
+}
+
+// create gray outline button 
+.btn-outline-default{
+	@include button-outline-variant($btn-default-color);
+}
+
+.btn {
+
+	outline: 0 !important;
+
+	&.btn-right {
+		float: right;
+	}
+
+	& .btn-label {
+		&.btn-trans {
+			background: transparent;
+		}
+	}
+
+	& > .fa {
+		float: right;
+
+		&.default-float {
+			float: none;
+		}
+	}
+
+	&.btn-remove-address {
+		background-color: $brand-danger;
+		margin-right: -5px;
+		color: #fff;
+
+		&:hover{
+			background-color: #c9302c;
+		}
+	}
+
+	&.btn-medium {
+		width: 10rem;
+	}
+
+	&.btn-medium-large {
+		width: 12rem;
+	}
+
+	&.btn-large {
+		width: 15rem;
+	}
+
+	&.btn-m-r {
+		margin-right: 10px;
+	}
+}
+
+.btn-right {
+	float: right;
+}
+
+.btn-labeled {
+	padding-top: 0;
+    padding-bottom: 0;
+	
+	@extend .small;
+
+	transition: all 200ms;
+
+	.btn-label {
+		position: relative;
+		right: -#{$btn-padding-x-sm};
+		display: inline-block;
+		padding: $btn-padding-y-sm $btn-padding-x-sm;
+		background-color: rgba(0,0,0,0.15);
+		border-top-right-radius: $border-radius-sm;
+		border-bottom-right-radius: $border-radius-sm;
+	}
+
+	&.label-right{
+		.btn-label {
+			right: auto;
+			left: -#{$btn-padding-x-sm};
+		}
+	}
+
+
+	&.btn-link{
+		padding-left: 0;
+		padding-right: 0;
+
+		.btn-label{
+			background-color: rgba(0,0,0,0);
+			padding: $btn-padding-y-sm 0;
+		}
+	}
+}
+
+.btn-icon
+{
+	padding: .5rem;
+	
+	.fa
+	{
+		width: 14px;
+		text-align: center;
+	}
+	
+	&.btn-sm
+	{
+		padding: .2rem;
+		
+		.fa
+		{
+			width: 12px;
+		}
+	}
+}
+
+// Responsive button text and icon visibility
+
+@each $bp in map-keys($grid-breakpoints) {
+	.btn-only-icon-#{$bp}-up {
+	  @include media-breakpoint-up($bp) {
+		width: 2.2rem !important;
+        padding-right: 8px;
+        height: 2.2rem;
+
+        & span {
+            display: none !important;
+        }
+	  }
+	}
+	.btn-only-icon-#{$bp}-down {
+	  @include media-breakpoint-down($bp) {
+		width: 2.2rem !important;
+        padding-right: 8px;
+        height: 2.2rem;
+
+        & span {
+            display: none !important;
+        }
+	  }
+	}
+  }
