@@ -1,0 +1,132 @@
+{
+  "sections":
+  [
+    {
+      "name": "MultilingualismConfig.address",
+      "prefix": "address"
+    },
+    {
+      "name": "MultilingualismConfig.basket",
+      "prefix": "basket"
+    },
+    {
+      "name": "MultilingualismConfig.cancellationForm",
+      "prefix": "cancellationForm"
+    },
+    {
+      "name": "MultilingualismConfig.cancellationRights",
+      "prefix": "cancellationRights"
+    },
+    {
+      "name": "MultilingualismConfig.checkout",
+      "prefix": "checkout"
+    },
+    {
+      "name": "MultilingualismConfig.contact",
+      "prefix": "contact"
+    },
+    {
+      "name": "MultilingualismConfig.coupon",
+      "prefix": "coupon"
+    },
+    {
+      "name": "MultilingualismConfig.dev",
+      "prefix": "dev"
+    },
+    {
+      "name": "MultilingualismConfig.footer",
+      "prefix": "footer"
+    },
+    {
+      "name": "MultilingualismConfig.header",
+      "prefix": "header"
+    },
+    {
+      "name": "MultilingualismConfig.homepage",
+      "prefix": "homepage"
+    },
+    {
+      "name": "MultilingualismConfig.itemSearch",
+      "prefix": "itemSearch"
+    },
+    {
+      "name": "MultilingualismConfig.item",
+      "prefix": "item"
+    },
+    {
+      "name": "MultilingualismConfig.legalDisclosure",
+      "prefix": "legalDisclosure"
+    },
+    {
+      "name": "MultilingualismConfig.login",
+      "prefix": "login"
+    },
+    {
+      "name": "MultilingualismConfig.myAccount",
+      "prefix": "myAccount"
+    },
+    {
+      "name": "MultilingualismConfig.pageNotFound",
+      "prefix": "pageNotFound"
+    },
+    {
+      "name": "MultilingualismConfig.notifications",
+      "prefix": "notifications"
+    },
+    {
+      "name": "MultilingualismConfig.orderConfirmation",
+      "prefix": "orderConfirmation"
+    },
+    {
+      "name": "MultilingualismConfig.orderHistory",
+      "prefix": "orderHistory"
+    },
+    {
+      "name": "MultilingualismConfig.privacyPolicy",
+      "prefix": "privacyPolicy"
+    },
+    {
+      "name": "MultilingualismConfig.reg",
+      "prefix": "reg"
+    },
+    {
+      "name": "MultilingualismConfig.resetPw",
+      "prefix": "resetPw"
+    },
+    {
+      "name": "MultilingualismConfig.returnConfirmation",
+      "prefix": "returnConfirmation"
+    },
+    {
+      "name": "MultilingualismConfig.returnHistory",
+      "prefix": "returnHistory"
+    },
+    {
+      "name": "MultilingualismConfig.return",
+      "prefix": "return"
+    },
+    {
+      "name": "MultilingualismConfig.shippingInfo",
+      "prefix": "shippingInfo"
+    },
+    {
+      "name": "MultilingualismConfig.singleItem",
+      "prefix": "singleItem"
+    },
+    {
+      "name": "MultilingualismConfig.termsAndConditions",
+      "prefix": "termsAndConditions"
+    },
+    {
+      "name": "MultilingualismConfig.wishList",
+      "prefix": "wishList"
+    }
+  ],
+  "ignoredTranslationFiles":
+  [
+    "MultilingualismConfig.properties",
+    "Widget.properties",
+    "Page.properties",
+    "Config.properties"
+  ]
+}
